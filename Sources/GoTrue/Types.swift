@@ -253,8 +253,8 @@ public struct UserIdentity: Codable, Hashable, Identifiable, Sendable {
   public var identityData: [String: AnyJSON]
   public var provider: String
   public var createdAt: Date
-  public var lastSignInAt: Date
-  public var updatedAt: Date
+  public var lastSignInAt: Date?
+  public var updatedAt: Date?
 
   public init(
     id: String,
