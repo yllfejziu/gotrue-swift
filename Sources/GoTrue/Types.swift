@@ -292,8 +292,8 @@ public struct UserIdentity: Codable, Hashable, Identifiable, Sendable {
       .decodeIfPresent([String: AnyJSON].self, forKey: .identityData) ?? [:]
     provider = try container.decode(String.self, forKey: .provider)
     createdAt = try container.decode(Date.self, forKey: .createdAt)
-    lastSignInAt = try container.decode(Date.self, forKey: .lastSignInAt)
-    updatedAt = try container.decode(Date.self, forKey: .updatedAt)
+    lastSignInAt = try? container.decode(Date.self, forKey: .lastSignInAt)
+    updatedAt = try? container.decode(Date.self, forKey: .updatedAt)
   }
 }
 
